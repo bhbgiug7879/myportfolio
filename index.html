@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Bennett - Portfolio 2025</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            border-bottom: 1px solid #e9ecef;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: #212529;
+        }
+        
+        .dropdown-toggle::after {
+            color: #7c4dff;
+        }
+        
+        .nav-link.active {
+            color: #7c4dff !important;
+        }
+        
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #7c4dff;
+            margin-left: 10px;
+        }
+        
+        .hero-section {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+            height: 89vh;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 70%;
+            height: 200%;
+            background-color: rgba(124, 77, 255, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .greeting {
+            color: #7c4dff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .name {
+            color: #212529;
+            font-size: 4rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .profession {
+            background-color: #7c4dff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-btn {
+            background-color: transparent;
+            color: #7c4dff;
+            border: 2px solid #7c4dff;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background-color: #7c4dff;
+            color: white;
+        }
+        
+        .profile-container {
+            position: relative;
+        }
+        
+        .profile-circle {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            aspect-ratio: 1;
+            background-color: #7c4dff;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .pattern {
+    position: absolute;
+    right: -111px;
+    bottom: -38px;
+    width: 500px;
+    height: 395px;
+    background-color: #2a2356;
+    z-index: -1;
+    border-radius: 10px;
+}
+        
+        .dots {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* About Section Styles */
+        .about-section {
+            background-color: #352b65;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-dots {
+            position: absolute;
+            right: 5%;
+            top: 20%;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 1.2rem;
+        }
+        
+        .about-image-container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-title {
+            color: #7c4dff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-subtitle {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .about-text {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .stats-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #7c4dff;
+            line-height: 1;
+        }
+        
+        .stat-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Services Section Styles */
+        .services-section {
+            padding: 80px 0;
+            position: relative;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+        
+        .services-section::after {
+            content: '';
+            position: absolute;
+            right: -10%;
+            bottom: -20%;
+            width: 40%;
+            height: 80%;
+            background-color: rgba(124, 77, 255, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .services-title {
+            color: #7c4dff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .services-text {
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .services-container {
+            background-color: #352b65;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 30px 15px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .service-item.active {
+            background-color: #7c4dff;
+            border-radius: 15px;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .service-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .name {
+                font-size: 3rem;
+            }
+            
+            .profile-circle {
+                margin: 40px auto 0;
+            }
+            
+            .about-image-container {
+                margin-bottom: 40px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .services-container {
+                flex-direction: column;
+            }
+            
+            .service-item {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Portfolio Section Styles */
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #f5f3ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10%;
+    width: 60%;
+    height: 150%;
+    background-color: rgba(124, 77, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.portfolio-title {
+    color: #7c4dff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#portfolioCarousel {
+    padding: 0 50px;
+}
+
+#portfolioCarousel .carousel-control-prev,
+#portfolioCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: #7c4dff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+#portfolioCarousel .carousel-control-prev {
+    left: 0;
+}
+
+#portfolioCarousel .carousel-control-next {
+    right: 0;
+}
+
+#portfolioCarousel .carousel-control-prev-icon,
+#portfolioCarousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.portfolio-item {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+}
+
+.item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 15px 15px;
+    color: #333;
+}
+
+.book-btn {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background-color: #7c4dff;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #6a3de8;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        margin-bottom: 30px;
+    }
+}
+
+/* Solutions Section Styles */
+.solutions-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.solutions-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10%;
+    width: 60%;
+    height: 150%;
+    background-color: rgba(124, 77, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.solutions-image-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.solutions-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #7c4dff;
+}
+
+.solutions-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    background-color: #352b65;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.experience-badge .years {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+}
+
+.experience-badge .text {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+}
+
+.solutions-content {
+    padding-left: 20px;
+}
+
+.solutions-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #7c4dff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.solutions-text {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.services-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #7c4dff;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+@media (max-width: 992px) {
+    .solutions-image-container {
+        margin-bottom: 40px;
+    }
+    
+    .solutions-content {
+        padding-left: 0;
+    }
+}
+
+/* Thank You Section Styles */
+.thank-you-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.thank-you-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10%;
+    width: 60%;
+    height: 150%;
+    background-color: rgba(124, 77, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.subtitle {
+    color: #7c4dff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #0f0a2e;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: #7c4dff;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #555;
+    max-width: 400px;
+}
+
+.thank-you-image-container {
+    position: relative;
+}
+
+.thank-you-image {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 8px solid #7c4dff;
+}
+
+.thank-you-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dots-pattern {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    height: 100px;
+    background-color: #352b65;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.dots-pattern::after {
+    content: '. . . . . .\A. . . . . .\A. . . . . .\A. . . . . .';
+    white-space: pre;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+@media (max-width: 992px) {
+    .thank-you-content {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .divider {
+        margin: 0 auto 20px;
+    }
+    
+    .description {
+        margin: 0 auto;
+    }
+    
+    .title {
+        font-size: 4rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Project
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Project 1</a></li>
+                            <li><a class="dropdown-item" href="#">Project 2</a></li>
+                            <li><a class="dropdown-item" href="#">Project 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="social-icon">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="social-icon">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="greeting">Hello Everyone, I Am</h3>
+                    <h1 class="name">Sebastian<br>Bennett</h1>
+                    <div class="profession">Web Designer & Development</div>
+                    <button class="btn contact-btn rounded-4">Contact Me</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="profile-container">
+                        <div class="profile-circle">
+                            <img src="/men-Photoroom.png" alt="Sebastian Bennett" class="profile-img">
+                        </div>
+                        <div class="pattern"></div>
+                        <div class="dots">
+                            :::::<br>
+                            :::::<br>
+                            :::::<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image-container">
+                        <img src="about-profile.jpg" alt="Sebastian Bennett" class="about-image">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="about-title">How About Me ?</h3>
+                    <h2 class="about-subtitle">Learn To Develop Sites With Components And Design System</h2>
+                    <p class="about-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum leo tellus, eget blandit urna consequat sit amet. Aenean tincidunt lacus eget purus dictum, congue imperdiet neque eleifend. Duis nulla mauris, volutpat ut placerat in, ornare quis lacus. In suscipit nunc dui, id aliquam
+                    </p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">10</div>
+                            <div class="stat-text">Years Of<br>Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">150</div>
+                            <div class="stat-text">Trusted By<br>Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-dots">
+            :::::::::<br>
+            :::::::::<br>
+            :::::::::<br>
+            :::::::::<br>
+            :::::::::<br>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h2 class="services-title">Any Type Of Service And Discussions</h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="services-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum leo tellus, eget blandit urna consequat sit amet. Aenean tincidunt lacus eget.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="icons/programming.png" alt="Programming Icon">
+                    </div>
+                    <h3 class="service-title">Programming</h3>
+                </div>
+                
+                <div class="service-item active">
+                    <div class="service-icon">
+                        <img src="icons/web-design.png" alt="Web Design Icon">
+                    </div>
+                    <h3 class="service-title">Web Design</h3>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="icons/ui-ux.png" alt="UI/UX Icon">
+                    </div>
+                    <h3 class="service-title">UI/UX</h3>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="icons/consultation.png" alt="Consultation Icon">
+                    </div>
+                    <h3 class="service-title">Consultation</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section">
+    <div class="container">
+        <h2 class="portfolio-title">My Selected Work</h2>
+        
+        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-1.jpg" alt="User Interface Design">
+                                </div>
+                                <h3 class="item-title">User Interface &<br>Experience Design</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-2.jpg" alt="Mobile Application">
+                                </div>
+                                <h3 class="item-title">Mobile Application<br>& Development</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-3.jpg" alt="React Next Coding">
+                                </div>
+                                <h3 class="item-title">React Next &<br>Responsive Coding</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-4.jpg" alt="E-commerce Development">
+                                </div>
+                                <h3 class="item-title">E-commerce<br>Development</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-5.jpg" alt="WordPress Development">
+                                </div>
+                                <h3 class="item-title">WordPress<br>Development</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="images/portfolio-6.jpg" alt="SEO Optimization">
+                                </div>
+                                <h3 class="item-title">SEO<br>Optimization</h3>
+                                <a href="#" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Section -->
+<section class="solutions-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="solutions-image-container">
+                    <div class="solutions-image">
+                        <img src="images/profile-solutions.jpg" alt="Sebastian Bennett">
+                    </div>
+                    <div class="experience-badge">
+                        <div class="years">10</div>
+                        <div class="text">Years Of<br>Experience</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="solutions-content">
+                    <h2 class="solutions-title">Create Bold Solutions<br>And Forward Looking</h2>
+                    <p class="solutions-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum leo tellus, eget blandit urna consequat sit amet. Aenean tincidunt lacus eget.
+                    </p>
+                    <ul class="services-list">
+                        <li>UI/UX Design</li>
+                        <li>Website Design & Development</li>
+                        <li>App Design</li>
+                        <li>Landing Page Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Thank You Section -->
+<section class="thank-you-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="thank-you-content">
+                    <h3 class="subtitle">Web & Development Designer</h3>
+                    <h2 class="title">THANK<br>YOU</h2>
+                    <div class="divider"></div>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum leo, eget blandit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="thank-you-image-container">
+                    <div class="thank-you-image">
+                        <img src="images/designers-working.jpg" alt="Designers Working Together">
+                    </div>
+                    <div class="dots-pattern"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
